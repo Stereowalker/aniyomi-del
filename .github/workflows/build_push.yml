@@ -6,9 +6,9 @@ permissions:
 on:
   push:
     branches:
-      - '*'
+      - '**'   # All branches
     tags:
-      - v*
+      - '**'   # All tags
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
