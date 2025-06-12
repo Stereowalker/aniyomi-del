@@ -36,7 +36,7 @@ jobs:
         run: ./gradlew spotlessCheck
 
       - name: Build app
-        run: ./gradlew assemblePreview -Penable-updater
+        run: ./gradlew assembleDebug -Penable-updater
 
       - name: Run unit tests
         run: ./gradlew testReleaseUnitTest
