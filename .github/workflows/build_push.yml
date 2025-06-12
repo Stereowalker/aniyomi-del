@@ -127,3 +127,14 @@ jobs:
           prerelease: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+consume:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download arm64 build
+        uses: actions/download-artifact@v3
+        with:
+          name: arm64-v8a-${{ github.sha }}
+          path: ./downloaded
+      - run: ls ./downloaded
+      # now you can e.g. upload it somewhere else, run integration tests, etc.
